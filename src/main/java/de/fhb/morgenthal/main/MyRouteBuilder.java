@@ -1,24 +1,16 @@
-package de.fhb.morgenthal;
+package de.fhb.morgenthal.main;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.camel.Exchange;
-import org.apache.camel.ExchangePattern;
-import org.apache.camel.Predicate;
-import org.apache.camel.Processor;
-import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.mail.MailMessage;
-import org.apache.camel.model.DataFormatDefinition;
-import org.apache.camel.model.SetHeaderDefinition;
-import org.apache.camel.model.dataformat.JsonLibrary;
-import org.apache.camel.spi.DataFormat;
-import org.apache.camel.spring.Main;
-
+import de.fhb.morgenthal.*;
 import de.fhb.morgenthal.converter.FlightSplitter;
 import de.fhb.morgenthal.vo.Flight;
+import org.apache.camel.Exchange;
+import org.apache.camel.Predicate;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.model.dataformat.JsonLibrary;
+import org.apache.camel.spring.Main;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A Camel Router

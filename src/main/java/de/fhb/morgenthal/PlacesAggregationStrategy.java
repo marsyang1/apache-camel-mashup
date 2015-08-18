@@ -1,5 +1,6 @@
 package de.fhb.morgenthal;
 
+import de.fhb.morgenthal.main.MyRouteBuilder;
 import org.apache.camel.Exchange;
 import org.apache.camel.processor.aggregate.AggregationStrategy;
 import org.apache.log4j.Logger;
@@ -9,7 +10,6 @@ import java.io.StringReader;
 import org.w3c.dom.*;
 import org.xml.sax.InputSource;
 import javax.xml.parsers.*;
-import javax.xml.xpath.*;
 
 import de.fhb.morgenthal.vo.Flight;
 
@@ -30,7 +30,7 @@ public class PlacesAggregationStrategy implements AggregationStrategy {
 	        Document doc = builder.parse(new InputSource(new StringReader(body)));
 	        NodeList nodes = doc.getElementsByTagName("result");
 				
-	        if(nodes.getLength()>MyRouteBuilder.PlacesDisplay)
+	        if(nodes.getLength()> MyRouteBuilder.PlacesDisplay)
 	        	count=MyRouteBuilder.PlacesDisplay;
 	        else
 	        	count=nodes.getLength();
@@ -58,7 +58,7 @@ public class PlacesAggregationStrategy implements AggregationStrategy {
 			logger.info("XML uncompleted");
 		}
 
-		fl.setPlaces(output.replaceAll("ü", "ue").replaceAll("ä", "ae").replaceAll("ö","oe").replaceAll("ß", "ss").replaceAll("Ü", "Ue").replaceAll("Ä", "Ae").replaceAll("Ö","Oe"));
+		fl.setPlaces(output.replaceAll("?", "ue").replaceAll("?", "ae").replaceAll("?","oe").replaceAll("?", "ss").replaceAll("?", "Ue").replaceAll("?", "Ae").replaceAll("?","Oe"));
 
 		return oldExchange;
 	}

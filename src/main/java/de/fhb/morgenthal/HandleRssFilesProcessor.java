@@ -2,8 +2,8 @@ package de.fhb.morgenthal;
 
 import java.io.File;
 
+import de.fhb.morgenthal.main.MyRouteBuilder;
 import org.apache.camel.Exchange;
-import org.apache.camel.Message;
 import org.apache.camel.Processor;
 
 public class HandleRssFilesProcessor implements Processor{
