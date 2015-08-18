@@ -1,4 +1,4 @@
-package de.fhb.morgenthal;
+package de.fhb.morgenthal.utils;
 
 import de.fhb.morgenthal.main.MyRouteBuilder;
 

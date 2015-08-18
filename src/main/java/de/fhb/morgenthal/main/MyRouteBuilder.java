@@ -2,6 +2,7 @@ package de.fhb.morgenthal.main;
 
 import de.fhb.morgenthal.*;
 import de.fhb.morgenthal.converter.FlightSplitter;
+import de.fhb.morgenthal.strategy.*;
 import de.fhb.morgenthal.vo.Flight;
 import org.apache.camel.Exchange;
 import org.apache.camel.Predicate;
@@ -27,7 +28,6 @@ public class MyRouteBuilder extends RouteBuilder {
      * A main() so we can easily run these routing rules in our IDE
      */
     public static void main(String... args) throws Exception {
-   	
         Main.main(args);
     }
 

@@ -1,10 +1,11 @@
 package de.fhb.morgenthal;
 
-import java.io.File;
-
 import de.fhb.morgenthal.main.MyRouteBuilder;
+import de.fhb.morgenthal.utils.RSSFilesUtils;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
+
+import java.io.File;
 
 public class HandleRssFilesProcessor implements Processor{
 

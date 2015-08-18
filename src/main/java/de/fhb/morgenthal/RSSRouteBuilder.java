@@ -1,15 +1,18 @@
 package de.fhb.morgenthal;
 
+import de.fhb.morgenthal.RestServiceImpl;
+import de.fhb.morgenthal.main.MyRouteBuilder;
+import de.fhb.morgenthal.utils.RSSFilesUtils;
+import org.apache.camel.Exchange;
+import org.apache.camel.Message;
+import org.apache.camel.Processor;
+import org.apache.camel.builder.RouteBuilder;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-import de.fhb.morgenthal.main.MyRouteBuilder;
-import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 //
-import org.apache.camel.Message;
 
 public class RSSRouteBuilder extends RouteBuilder{
 

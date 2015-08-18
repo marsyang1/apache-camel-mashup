@@ -1,4 +1,4 @@
-package de.fhb.morgenthal;
+package de.fhb.morgenthal.strategy;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.processor.aggregate.AggregationStrategy;

@@ -1,11 +1,10 @@
-package de.fhb.morgenthal;
+package de.fhb.morgenthal.strategy;
 
-import java.util.HashMap;
-
+import de.fhb.morgenthal.vo.Flight;
 import org.apache.camel.Exchange;
 import org.apache.camel.processor.aggregate.AggregationStrategy;
 
-import de.fhb.morgenthal.vo.Flight;
+import java.util.HashMap;
 
 public class AirportFlightAggregationStrategy implements AggregationStrategy {
 

@@ -1,4 +1,4 @@
-package de.fhb.morgenthal;
+package de.fhb.morgenthal.strategy;
 
 import de.fhb.morgenthal.main.MyRouteBuilder;
 import org.apache.camel.Exchange;
