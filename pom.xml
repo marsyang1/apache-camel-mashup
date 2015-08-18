@@ -17,116 +17,142 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>de.fhb.morgenthal</groupId>
-  <artifactId>SystemintegrationMorgenthal</artifactId>
-  <version>1.0</version>
+    <groupId>de.fhb.morgenthal</groupId>
+    <artifactId>SystemintegrationMorgenthal</artifactId>
+    <version>1.0</version>
 
-  <name>Semesteraufgabe Systenmintegration</name>
-  <url>http://www.johndoe.org</url>
+    <name>Semesteraufgabe Systenmintegration</name>
+    <url>http://www.johndoe.org</url>
 
-<dependencies>
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-core</artifactId>
-      <version>2.9.0</version>
-    </dependency>
-    
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-spring</artifactId>
-      <version>2.9.0</version>
-    </dependency>
-    
-    <dependency>
-    	<groupId>org.apache.camel</groupId>
-    	<artifactId>camel-http</artifactId>
-    	<version>2.9.0</version>
-	</dependency>
-	
-    <dependency>
-	    <groupId>org.apache.camel</groupId>
-	    <artifactId>camel-stream</artifactId>
-	    <version>2.9.0</version>
-	</dependency>
-	
-	<dependency>
-	  <groupId>org.apache.camel</groupId>
-	  <artifactId>camel-xstream</artifactId>
-	  <version>2.9.0</version>
-	</dependency>
-	
-	<dependency>
-	  <groupId>org.apache.camel</groupId>
-	  <artifactId>camel-jackson</artifactId>
-	  <version>2.9.0</version>
-	</dependency>
-		
- 	<dependency>
-	    <groupId>org.apache.camel</groupId>
-	    <artifactId>camel-mail</artifactId>
-	    <version>2.9.0</version>
-	</dependency>
-	
-	<dependency>
-	    <groupId>org.apache.camel</groupId>
-	    <artifactId>camel-rss</artifactId>
-	    <version>2.9.0</version>
-	</dependency>
-	
-	<dependency>
-	   <groupId>org.apache.camel</groupId>
-	   <artifactId>camel-cxf</artifactId>
-	   <version>2.9.0</version>
-	</dependency>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <camel.version>2.15.1</camel.version>
+        <spring-boot.version>1.2.5.RELEASE</spring-boot.version>
+        <fabric8.version>2.2.20</fabric8.version>
+    </properties>
 
-    <dependency>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-rt-transports-http-jetty</artifactId>
-        <version>${cxf-version}</version>
-    </dependency>
-	
-    <!-- logging -->
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>1.6.1</version>
-    </dependency>
-    
-    <dependency>
-      <groupId>log4j</groupId> 
-      <artifactId>log4j</artifactId> 
-      <version>1.2.16</version> 
-    </dependency>
-  </dependencies>
-  
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Level -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>4.1.5.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-  <build>
-    <defaultGoal>install</defaultGoal>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
 
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
 
-      <!-- allows the route to be ran via 'mvn camel:run' -->
-      <plugin>
-        <groupId>org.apache.camel</groupId>
-        <artifactId>camel-maven-plugin</artifactId>
-        <version>2.9.0</version>
-      </plugin>
-    </plugins>
-  </build>
-  <properties>
-  	<cxf-version>2.5.1</cxf-version>
-  </properties>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-http</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-stream</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-xstream</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jackson</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-mail</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-rss</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-cxf</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http-jetty</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+
+        <!-- logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>package</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <!-- allows the route to be ran via 'mvn camel:run' -->
+            <plugin>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-maven-plugin</artifactId>
+                <version>${camel.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
