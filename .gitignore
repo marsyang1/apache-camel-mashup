@@ -13,7 +13,7 @@ hs_err_pid*
 
 # IDE
 .idea/
-*.imi
+*.iml
 
 # Eclipse
 .settings/
