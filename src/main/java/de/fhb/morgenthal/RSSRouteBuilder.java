@@ -1,7 +1,5 @@
 package de.fhb.morgenthal;
 
-import de.fhb.morgenthal.RestServiceImpl;
-import de.fhb.morgenthal.main.MyRouteBuilder;
 import de.fhb.morgenthal.utils.RSSFilesUtils;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;

@@ -1,6 +1,6 @@
 package de.fhb.morgenthal.utils;
 
-import de.fhb.morgenthal.main.MyRouteBuilder;
+import de.fhb.morgenthal.MyRouteBuilder;
 
 import java.io.File;
 

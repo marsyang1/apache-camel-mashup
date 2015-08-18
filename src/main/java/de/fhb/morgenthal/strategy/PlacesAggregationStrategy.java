@@ -1,6 +1,6 @@
 package de.fhb.morgenthal.strategy;
 
-import de.fhb.morgenthal.main.MyRouteBuilder;
+import de.fhb.morgenthal.MyRouteBuilder;
 import org.apache.camel.Exchange;
 import org.apache.camel.processor.aggregate.AggregationStrategy;
 import org.apache.log4j.Logger;

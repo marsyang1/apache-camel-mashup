@@ -1,6 +1,5 @@
-package de.fhb.morgenthal.main;
+package de.fhb.morgenthal;
 
-import de.fhb.morgenthal.*;
 import de.fhb.morgenthal.converter.FlightSplitter;
 import de.fhb.morgenthal.strategy.*;
 import de.fhb.morgenthal.vo.Flight;
